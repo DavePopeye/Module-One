@@ -41,10 +41,16 @@ console.log(boundaries(400))
 
 //ex 5
 
-function strivify(){
-    
-}
+function strivify(S){
+    if (S.indexOf("Strive") === -1)
+        return "Strive" + S
+    else
+        return S
 
+    return S.indexOf("Strive") === -1 ? "Strive" + S : S
+} 
+console.log(strivify("ciao sono davide"))
+console.log(strivify("sono uno studente di Strive"))
 //ex 6 
 
 function check3and7(n) {
