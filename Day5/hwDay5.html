@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<!--
+ASSIGNMENT RULES
+- The solution must be pushed to the repository and be available for the tutors by the end of the day
+- You can ask for tutor's help
+- You can google / use StackOverflow BUT we suggest you to use just the material provided
+- To test the page, just open it with your default browser.
+
+ASSIGNMENT TOPIC
+You are building a Barbers' Shop website. 
+The website is quite simple, it should include the basic information about the Shop (Name, address etc)
+and include a form to get reservation.
+
+Note: the form should just be implemented in HTML + CSS, no extra code needed.
+-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figaro's</title>
+    <style>
+        #title {
+            position: relative;
+            background-color: black;
+            width: 100%;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+
+        h1 {
+            font-style: oblique;
+            font-size: 40px;
+            color: darkkhaki;
+            padding-top: 20px;
+            margin-top: 0px;
+            margin-left: 10px;
+        }
+
+        #slogan {
+            font-size: 20px;
+            font-weight: 100;
+            color: whitesmoke;
+            padding-bottom: 20px;
+            margin-left: 10px;
+        }
+
+        #promotion{
+            position: relative;
+            background-color: darkkhaki;
+            color: black;
+            margin-top: 0px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            width: 100%;
+        }
+
+        h2{
+            margin-left: 10px;
+        }
+
+        #royal{
+            font-weight: bold;
+            font-size: 30px;
+            color: black;
+            margin-left: 10px;
+        }
+        
+        #book{
+           background-color: gainsboro;
+           color: black;
+           padding: 20px;
+        }
+
+        #onbook{
+            margin: 10px
+        }
+
+        #address{
+            margin: 10px;
+        }
+
+        #ourPrices{
+            background-color: darkkhaki;
+            color: black;
+            padding: 20px;
+            text-align: right;
+            position: relative;
+            
+        }
+        
+
+        .prices{
+            font-weight: bold;
+            margin: 5px;
+            font-size: 35px;
+        }
+        
+        .descr{
+            font-style: italic;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+
+
+        /* EXERCISE 2:  
+       Style h1 color, alignment, size as you like it;
+       Style h2 color, alignment, size as you like it;
+       Style page background color as you like it
+       [EXTRA]
+       Set a red-ish color when the input of the forms are invalid
+       Set a ok-ish color when the input of the forms are valid
+    */
+    </style>
+</head>
+
+<body>
+    <!-- EXERCISE 11
+        Add a navbar with the links to the sections
+        -->
+
+    <div id="title">
+        <h1>IL FIGARO</h1>
+        <p id="slogan">GIVE YOU THE STYLE EVERYBODY ASKIN FOR</p>
+
+    </div>
+
+
+    <div id="promotion">
+        <h2>PROMOTION OF THE WEEK!</h2>
+        <span id="royal">Royal Shave 20% off</span>
+    </div>
+        
+
+    <div id="address">
+        <h3>WHERE YOU CAN FIND US</h3>
+        <a href="https://www.google.it/maps/place/48+East+End+Ave,+New+York,+NY+10028,+Stati+Uniti/@40.772249,-73.9493405,17z/data=!3m1!4b1!4m5!3m4!1s0x89c258b7829e5825:0x51dd43c2d124ac2f!8m2!3d40.772245!4d-73.9471518"
+            , target="_blank">48 E End Ave - New York - NY 10028</a>
+
+        
+        <input id="email" type="email" placeholder="insert your email here" value="">
+        <input id="saveButton" type="button" value="Send it!" onclick="userEmail()">
+    </div>
+
+    <div id="data">
+        <div id="book">
+            <h3>TAKE AN APPONINTEMENT WITH US</h3>
+            <p>Your Phone Number*</p>
+            <input id="phone" type="text" value="">
+            <p>Date*</p>
+            <input id="date" type="text" placeholder="MM/DD/YYYY" value="">
+            <p>Your Name(optional)</p>
+            <input id="name" type="text" value="">
+        </div>
+    </div>
+        
+    <input id="onbook" type="button" value="Take an appointment" onclick="bookUs()">
+        
+
+    <div id="ourPrices">
+        <h3>OUR PRICES</h3>
+        <div>
+            <p class="prices">Men’s Haircut........$30</p>
+            <p class="descr">(Men's Hair Cut with buzzer and/or scissors, included neck shave)</p>
+            <p class="prices">Buzz Cut.................$28</p>
+            <p class="descr">(A simple buzz, using only one clipper guard length)</p>
+            <p class="prices">All Beard Trims.....$18</p>
+            <p class="descr">(Trim the facial hair with the machine and a hot towel)</p>
+            <p class="prices">The Royal Shave...$70</p>
+            <p class="descr">(Straight razor shave with a hot-towel)</p>
+        </div>
+
+
+    </div>
+   
+    <footer>
+        <span>Il Figaro /// 48 E End Ave - New York - NY 10028 /// Phone: (212)996-60889 /// ilfigaro@gmail.com </span>
+    </footer>
+
+    <script>
+
+        function userEmail() {
+            let emailField = document.querySelector("#email");
+            //let mail = .value
+            console.log("email is", emailField.value)
+            emailField.value = ""
+        }
+
+        function bookUs() {
+            let phonecell = document.querySelector("#phone").value
+            let dayIn = document.querySelector("#date").value
+            let clientName = document.querySelector("#name").value
+            console.log("phone number is", phonecell)
+            console.log(new Date, dayIn)
+            console.log("the client name is", clientName)
+            document.querySelector("#phone").value = ""
+            document.querySelector("#date").value = ""
+            document.querySelector("#name").value = ""
+        }
+            
+          
+
+        window.onload = function () {
+
+            const width = window.innerWidth || document.documentElement.clientWidth ||
+                document.body.clientWidth;
+            const height = window.innerHeight || document.documentElement.clientHeight ||
+                document.body.clientHeight;
+
+            console.log(width, height);
+            console.log('Page loaded!')
+
+            /* EXERCISE 10:
+                        Write on console the size (height and width) of the current browser window
+                        Write on console the size (height and width) of the current page window
+                    */
+        }
+
+    </script>
+</body>
+
+</html>
